@@ -29,6 +29,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-family: "Roboto Mono", monospace;
   background-color: #111827;
+  overflow-x: hidden;
 }
 
 section .typed-name .typed-cursor {
@@ -37,6 +38,11 @@ section .typed-name .typed-cursor {
   font-size: 48px;
   color: rgb(229, 231, 235);
   margin-left: 2px;
+}
+
+.cursor {
+  box-shadow: 0 0 10px #34d399;
+  filter: blur(45px);
 }
 
 @media screen and (min-width: 1024px) {

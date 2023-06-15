@@ -11,7 +11,7 @@ export default function Home(): JSX.Element {
   // Create Typed instance
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["Erick Rian", "Full-Stack"], // Strings
+      strings: ["Erick Rian", "Software Engineer"], // Strings
       typeSpeed: 100,
       backSpeed: 100,
       loop: true,

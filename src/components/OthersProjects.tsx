@@ -39,7 +39,7 @@ export default function OthersProjects({ projects }: ProjectsProps) {
                     <h1 className="text-xl text-gray-200 font-bold">
                       {project.name}
                     </h1>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-400">
                       {project.description}
                     </p>
                   </div>

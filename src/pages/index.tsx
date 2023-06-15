@@ -13,6 +13,17 @@ import "boxicons/css/boxicons.min.css";
 export default function Index({
   projects,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const handleCursor = (e: any) => {
+    const cursor = document.querySelector(".cursor");
+    cursor?.setAttribute(
+      "style",
+      `top: ${e.pageY - 30}px; left: ${e.pageX - 30}px;`
+    );
+  };
+
+  if (typeof window !== "undefined")
+    window.addEventListener("mousemove", handleCursor);
+
   return (
     <div id="home">
       <Head>
@@ -40,6 +51,7 @@ export default function Index({
       <Home />
       <Main projects={projects} />
       <Footer projects={projects} />
+      <div className="cursor absolute w-16 h-16 bg-emerald-400 rounded-full z-50 pointer-events-none mix-blend-difference"></div>
     </div>
   );
 }
