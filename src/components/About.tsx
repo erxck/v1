@@ -11,7 +11,7 @@ export default function About(): JSX.Element {
       className="scroll-m-36 md:flex md:justify-between md:items-center md:gap-10 sm:scroll-m-24 md:scroll-m-28 lg:scroll-m-36 xl:scroll-m-48"
       id="about"
     >
-      <div className="relative order-2 rounded sm:max-w-xs">
+      <div className="relative mx-auto order-2 rounded sm:max-w-xs md:mx-0">
         <span
           className={`hidden sm:block absolute h-14 w-14 border-t border-l border-emerald-400 rounded-tl duration-300 
             ${borderImg ? "-left-3 -top-3" : "-left-5 -top-5"}`}
