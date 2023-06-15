@@ -25,7 +25,7 @@ export default function Home(): JSX.Element {
 
   return (
     <section className="px-8 sm:px-20 lg:px-40 flex justify-start items-center h-screen">
-      <div className="flex flex-col pt-8 space-y-7">
+      <div className="flex flex-col pt-8">
         <div className="border-l-4 border-emerald-400/30 pl-3">
           <h2 className="xl:text-3xl text-2xl text-emerald-400 font-bold">
             Sou
@@ -37,20 +37,20 @@ export default function Home(): JSX.Element {
             ></span>
           </div>
         </div>
-        <h2 className="lg:text-3xl xl:text-5xl text-2xl text-slate-400 font-bold">
+        <h2 className="lg:text-3xl xl:text-5xl text-2xl mt-5 text-slate-400 font-bold">
           E eu amo a tecnologia.
         </h2>
-        <p className="text-base text-slate-400 w-full max-w-xl lg:text-lg">
+        <p className="text-base mt-7 text-slate-400 w-full max-w-xl lg:text-lg">
           Você pode entrar em contato comigo se precisar de ajuda para criar um
           site para você ou sua empresa.
         </p>
         <a
-          className="block w-fit lg:py-4 xl:px-28 lg:px-24 sm:px-20 lg:text-base py-3 px-16 text-sm text-emerald-400 border border-emerald-400 hover:bg-emerald-400/10 ease-in duration-300 rounded uppercase font-bold"
+          className="block w-fit mt-7 lg:py-4 xl:px-28 lg:px-24 sm:px-20 lg:text-base py-3 px-16 text-sm text-emerald-400 border border-emerald-400 hover:bg-emerald-400/10 ease-in duration-300 rounded uppercase font-bold"
           href="#contact"
         >
           Contato
         </a>
-        <div className="flex gap-4 py-1 px-3 items-center bg-gray-700/40 backdrop-blur-md ring-1 ring-gray-700/80 rounded-lg w-fit">
+        <div className="flex gap-4 py-1 px-3 mt-7 items-center bg-gray-700/40 backdrop-blur-md ring-1 ring-gray-700/80 rounded-lg w-fit">
           <Link
             className="hover:scale-105 duration-200"
             target="_blank"
