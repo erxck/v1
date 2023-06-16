@@ -51,7 +51,7 @@ export default function Index({
       <Home />
       <Main projects={projects} />
       <Footer projects={projects} />
-      <div className="cursor absolute w-16 h-16 bg-emerald-400 rounded-full z-50 pointer-events-none mix-blend-difference"></div>
+      <div className="hidden cursor absolute w-16 h-16 bg-emerald-400 rounded-full z-50 pointer-events-none mix-blend-difference lg:block"></div>
     </div>
   );
 }
