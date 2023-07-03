@@ -45,6 +45,7 @@ export default function Header(): JSX.Element {
               width={500}
               height={500}
               alt="Erick Rian"
+              priority={true}
             />
           </a>
           <div

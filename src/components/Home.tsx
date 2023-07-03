@@ -41,8 +41,8 @@ export default function Home(): JSX.Element {
           E eu amo a tecnologia.
         </h2>
         <p className="text-base mt-7 text-slate-400 w-full max-w-xl lg:text-lg">
-          Você pode entrar em contato comigo se precisar de ajuda para criar um
-          site para você ou sua empresa.
+          Buscando um desenvolvedor motivado e habilidoso para agregar valor ao
+          seu time? Entre em contato comigo e vamos conversar. 👇
         </p>
         <a
           className="block w-fit mt-7 lg:py-4 xl:px-28 lg:px-24 sm:px-20 lg:text-base py-3 px-16 text-sm text-emerald-400 border border-emerald-400 hover:bg-emerald-400/10 ease-in duration-300 rounded uppercase font-bold"
@@ -50,37 +50,6 @@ export default function Home(): JSX.Element {
         >
           Contato
         </a>
-        <div className="flex gap-4 py-1 px-3 mt-7 items-center bg-gray-700/40 backdrop-blur-md ring-1 ring-gray-700/80 rounded-lg w-fit">
-          <Link
-            className="hover:scale-105 duration-200"
-            target="_blank"
-            rel="noopener noreferrer"
-            passHref={true}
-            href={"https://github.com/erxck"}
-          >
-            {IconGitHub}
-          </Link>
-          <Link
-            className="hover:scale-105 duration-200"
-            target="_blank"
-            rel="noopener noreferrer"
-            passHref={true}
-            href={"https://www.linkedin.com/in/erick-rian/"}
-          >
-            {IconLinkedin}
-          </Link>
-          <Link
-            className="hover:scale-105 duration-200"
-            target="_blank"
-            rel="noopener noreferrer"
-            passHref={true}
-            href={
-              "mailto:contatoerickrian@gmail.com?subject=Olá Erick, tudo bem?&body=Olá Erick, tudo bem?"
-            }
-          >
-            {IconMail}
-          </Link>
-        </div>
       </div>
     </section>
   );

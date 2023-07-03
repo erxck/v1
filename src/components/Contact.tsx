@@ -53,7 +53,13 @@ export default function Contact() {
         </div>
       </section>
       <div className="hidden lg:block max-w-sm">
-        <Image src={ImageContact} alt="Business" width={500} height={500} />
+        <Image
+          className="w-full"
+          src={ImageContact}
+          width={500}
+          height={500}
+          alt="Contact"
+        />
       </div>
     </section>
   );

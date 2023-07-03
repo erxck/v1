@@ -1,23 +1,26 @@
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
+
+import { IconGitHub, IconMail, IconLinkedin } from "./icons";
 
 import Profile from "@/assets/img/profile.jpg";
 
 export default function About(): JSX.Element {
-  const [borderImg, setBorderImg] = useState<Boolean>(false);
+  const [borderImg, setBorderImg] = useState<boolean>(false);
 
   return (
     <section
       className="scroll-m-36 md:flex md:justify-between md:items-center md:gap-10 sm:scroll-m-24 md:scroll-m-28 lg:scroll-m-36 xl:scroll-m-48"
       id="about"
     >
-      <div className="relative mx-auto order-2 rounded sm:max-w-xs md:mx-0">
+      <div className="relative mx-auto order-2 rounded max-w-xs md:mx-0">
         <span
           className={`hidden sm:block absolute h-14 w-14 border-t border-l border-emerald-400 rounded-tl duration-300 
             ${borderImg ? "-left-3 -top-3" : "-left-5 -top-5"}`}
         ></span>
         <Image
-          className="z-10 w-full md:max-w-xs rounded lg:opacity-80 lg:hover:opacity-100 lg:duration-300"
+          className="z-10 w-full md:max-w-xs rounded duration-300 opacity-100 lg:opacity-70 lg:hover:opacity-100"
           src={Profile}
           width={500}
           height={500}
@@ -39,47 +42,54 @@ export default function About(): JSX.Element {
             Sobre
           </h1>
         </div>
-        <div className="flex flex-col gap-2">
-          <p className="text-base text-slate-400 w-full md:max-w-md lg:max-w-lg xl:max-w-xl">
-            Sou um graduando entusiasmado em Ciência da Computação, com
-            habilidades sólidas em programação, resolução de problemas e
-            desenvolvimento de software. Atualmente, estou buscando
-            oportunidades para aplicar meu conhecimento teórico e desenvolver
-            habilidades práticas na área.
+        <div className="flex flex-col text-sm gap-2 text-slate-400 w-full md:max-w-md lg:text-base lg:max-w-lg xl:max-w-xl">
+          <p>
+            Eu sou um estudante de Ciência da Computação com fortes habilidades
+            de programação, resolução de problemas e desenvolvimento de
+            software.
           </p>
-          <p className="text-base text-slate-400 w-full md:max-w-md lg:max-w-lg xl:max-w-xl">
-            Com conhecimentos em linguagens como C/C++, JavaScript e TypeScript,
-            estou preparado para enfrentar desafios e contribuir para projetos
-            inovadores. Sou um aprendiz ágil e entusiasta, com habilidades de
-            comunicação eficazes.
+          <p>
+            Estou procurando oportunidades para aplicar meus conhecimentos
+            teóricos e desenvolver habilidades práticas. Possuo conhecimento em
+            linguagens como C/C++, JavaScript e TypeScript. Sou ágil, entusiasta
+            e possuo habilidades de comunicação eficazes.
           </p>
-          <p className="text-base text-slate-400 w-full md:max-w-md lg:max-w-lg xl:max-w-xl">
-            Estou em busca de oportunidades que me permitam ganhar experiência
-            prática e crescer como engenheiro de software, mesmo sem ter
-            experiência profissional prévia.
+          <p>
+            Estou procurando oportunidades para ganhar experiência prática e
+            crescer como engenheiro de software, apesar de não ter experiência
+            de trabalho anterior.
           </p>
         </div>
-        <div className="mt-6">
-          <ul>
-            <li className="flex items-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-emerald-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  // eslint-disable-next-line max-len
-                  d="M10 2a8 8 0 100 16 8 8 0 000-16zM8 9a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1zm1 3a1 1 0 100 2h2a1 1 0 100-2H9z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span className="text-base text-slate-400">
-                Email: contatoerickrian@gmail.com
-              </span>
-            </li>
-          </ul>
+        <div className="flex mx-auto gap-4 py-1 px-3 mt-7 items-center bg-gray-700/40 backdrop-blur-md ring-1 ring-gray-700/80 rounded-lg w-fit md:mx-0">
+          <Link
+            className="hover:scale-105 duration-200"
+            target="_blank"
+            rel="noopener noreferrer"
+            passHref={true}
+            href={"https://github.com/erxck"}
+          >
+            {IconGitHub}
+          </Link>
+          <Link
+            className="hover:scale-105 duration-200"
+            target="_blank"
+            rel="noopener noreferrer"
+            passHref={true}
+            href={"https://www.linkedin.com/in/erick-rian/"}
+          >
+            {IconLinkedin}
+          </Link>
+          <Link
+            className="hover:scale-105 duration-200"
+            target="_blank"
+            rel="noopener noreferrer"
+            passHref={true}
+            href={
+              "mailto:contatoerickrian@gmail.com?subject=Olá Erick, tudo bem?&body=Olá Erick, tudo bem?"
+            }
+          >
+            {IconMail}
+          </Link>
         </div>
       </div>
     </section>

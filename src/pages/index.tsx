@@ -21,8 +21,9 @@ export default function Index({
     );
   };
 
-  if (typeof window !== "undefined")
+  if (typeof window !== "undefined") {
     window.addEventListener("mousemove", handleCursor);
+  }
 
   return (
     <div id="home">

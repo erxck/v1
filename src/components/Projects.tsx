@@ -40,7 +40,7 @@ export default function Projects({
               <h1 className="mb-4 text-2xl xl:text-3xl text-gray-200 font-bold">
                 {project.name}
               </h1>
-              <p className="text-base text-slate-400 w-full">
+              <p className="text-sm lg:text-base text-slate-400 w-full">
                 {project.description}
               </p>
               <div className="mt-6 flex items-center justify-start gap-2">
