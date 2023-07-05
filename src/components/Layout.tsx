@@ -22,7 +22,7 @@ export default function Layout({
   }
 
   return (
-    <div id="home">
+    <div id="home" className="flex flex-col h-screen">
       <Head>
         <title>Erick Rian</title>
         <meta name="description" content="Erick Rian" />
@@ -45,9 +45,9 @@ export default function Layout({
         <link rel="apple-touch-icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main>{children}</main>
+      <main className="flex-1">{children}</main>
       <Footer />
-      <div className="hidden cursor absolute w-16 h-16 bg-emerald-400 rounded-full z-50 pointer-events-none mix-blend-difference lg:block"></div>
+      {/* <div className="hidden cursor absolute w-16 h-16 bg-emerald-400 rounded-full z-50 pointer-events-none mix-blend-difference lg:block"></div> */}
     </div>
   );
 }
