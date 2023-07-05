@@ -1,102 +1,136 @@
-import Header from "@/components/Header";
-import Home from "@/components/Home";
-import Main from "@/components/Main";
-import Footer from "@/components/Footer";
-import Head from "next/head";
-import type { InferGetStaticPropsType, GetStaticProps } from "next";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 
-import axios from "axios";
+import Layout from "@/components/Layout";
+import Home from "@/components/Home";
+import About from "@/components/About";
+import Projects from "@/components/Projects";
+import OthersProjects from "@/components/OthersProjects";
+import Contact from "@/components/Contact";
+
+import {
+  IconTypeScript,
+  IconFirebase,
+  IconReact,
+  IconTailwind,
+} from "@/components/icons";
+import { loadProjects } from "@/lib/load-projects";
 import { OthersProjectProps } from "@/types/Project";
 
-import "boxicons/css/boxicons.min.css";
+import PreviewSearchBinary from "@/assets/img/search_binary.png";
+import PreviewGoogleKeepClone from "@/assets/img/google-keep-clone.png";
+import PreviewSortingAlgorithms from "@/assets/img/SortingAlgorithms.png";
 
-export default function Index({
+export default function index({
   projects,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const handleCursor = (e: any) => {
-    const cursor = document.querySelector(".cursor");
-    cursor?.setAttribute(
-      "style",
-      `top: ${e.pageY - 30}px; left: ${e.pageX - 30}px;`
-    );
-  };
-
-  if (typeof window !== "undefined") {
-    window.addEventListener("mousemove", handleCursor);
-  }
+  const featuredProjects = [
+    {
+      id: 1,
+      projectImage: PreviewSortingAlgorithms,
+      name: "Sorting Algorithms Visualizer",
+      homepage: "https://sorting-algorithms-visualizer-erick.vercel.app/",
+      html_url: "https://github.com/erxck/sorting-algorithm-visualizer",
+      description:
+        "Visualizador de algoritmos de ordenação desenvolvido com React e Tailwind CSS.",
+      tecnologias: [
+        {
+          id: 1,
+          name: "React",
+          icon: IconReact,
+        },
+        {
+          id: 2,
+          name: "Tailwind CSS",
+          icon: IconTailwind,
+        },
+        { id: 3, name: "", icon: null },
+        {
+          id: 4,
+          name: "",
+          icon: null,
+        },
+      ],
+    },
+    {
+      id: 2,
+      projectImage: PreviewSearchBinary,
+      name: "Artigo: Pesquisa Binária e Pesquisa Linear",
+      homepage: "",
+      html_url: "https://github.com/erxck/pesquisa-binaria",
+      description:
+        "Explorando as diferenças entre pesquisa binária e pesquisa linear: uma análise comparativa dos algoritmos de busca mais populares.",
+      tecnologias: [
+        {
+          id: 1,
+          name: "",
+          icon: null,
+        },
+        {
+          id: 2,
+          name: "",
+          icon: null,
+        },
+        { id: 3, name: "", icon: null },
+        {
+          id: 4,
+          name: "",
+          icon: null,
+        },
+      ],
+    },
+    {
+      id: 3,
+      projectImage: PreviewGoogleKeepClone,
+      name: "Google Keep Clone",
+      homepage: "https://keep-clone-21bed.web.app/",
+      html_url: "https://github.com/erxck/google-keep-clone",
+      description:
+        "Aplicação web clone do Google Keep, desenvolvida com TypeScript, React, Tailwind CSS e Firebase.",
+      tecnologias: [
+        {
+          id: 1,
+          name: "TypeScript",
+          icon: IconTypeScript,
+        },
+        {
+          id: 2,
+          name: "React",
+          icon: IconReact,
+        },
+        { id: 3, name: "Tailwind CSS", icon: IconTailwind },
+        {
+          id: 4,
+          name: "Firebase",
+          icon: IconFirebase,
+        },
+      ],
+    },
+  ];
 
   return (
-    <div id="home">
-      <Head>
-        <title>Erick Rian</title>
-        <meta name="description" content="Erick Rian" />
-        <link rel="icon" href="/favicon.ico" />
-
-        <meta property="og:title" content="Erick Rian" />
-        <meta property="og:description" content="Portfólio de Erick Rian" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://erickrian.com/" />
-        <meta property="og:image" content="/preview.png" />
-        <meta property="og:image:alt" content="Erick Rian" />
-        <meta property="og:locale" content="pt_BR" />
-        <meta property="og:site_name" content="Erick Rian" />
-
-        <meta name="theme-color" content="#111827" />
-        <meta name="msapplication-TileColor" content="#111827" />
-        <meta name="msapplication-TileImage" content="/favicon.ico" />
-        <meta name="msapplication-config" content="/favicon.ico" />
-
-        <link rel="apple-touch-icon" href="/favicon.ico" />
-      </Head>
-      <Header />
+    <Layout>
       <Home />
-      <Main projects={projects} />
-      <Footer projects={projects} />
-      <div className="hidden cursor absolute w-16 h-16 bg-emerald-400 rounded-full z-50 pointer-events-none mix-blend-difference lg:block"></div>
-    </div>
+      <div className="px-6 py-16 w-full max-w-[1440px] mx-auto sm:px-16 lg:px-24 xl:px-36">
+        {/* About */}
+        <About />
+
+        {/* Projects */}
+        <Projects featuredProjects={featuredProjects} />
+
+        {/* Others Projects */}
+        <OthersProjects projects={projects} />
+
+        {/* Contact */}
+        <Contact />
+      </div>
+    </Layout>
   );
 }
 
 export const getStaticProps: GetStaticProps<{
   projects: OthersProjectProps[];
 }> = async () => {
-  const username = "erxck";
-  const language = ""; // Em branco para buscar todos os idiomas
-  const sort = "created"; // Ordenar por data de atualização
-  const params = {
-    sort,
-    direction: "desc",
-    per_page: 100,
-    language,
-  };
-
-  const { data } = await axios.get(
-    `https://api.github.com/users/${username}/repos`,
-    { params }
-  );
-
-  const filteredProjects = data.filter((project: any) => {
-    const excludedProjectNames = [
-      "erxck",
-      "pesquisa-binaria",
-      "sorting-algorithm-visualizer",
-      "google-keep-clone",
-    ];
-    return !excludedProjectNames.includes(project.name);
-  });
-
-  const projects = filteredProjects.map((project: any) => ({
-    id: project.id,
-    name: project.name,
-    description: project.description,
-    html_url: project.html_url,
-    homepage: project.homepage,
-    created_at: project.created_at,
-    updated_at: project.updated_at,
-    language: project.language,
-    stargazers_count: project.stargazers_count,
-    forks_count: project.forks_count,
-  }));
+  const projects = await loadProjects();
 
   return {
     props: {

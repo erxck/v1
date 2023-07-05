@@ -18,14 +18,14 @@ export default function Contact() {
           </h1>
         </div>
         <div className="flex w-full flex-col gap-5">
-          <p className="text-base text-slate-400 w-full lg:max-w-xl lg:text-left">
+          <p className="text-sm text-slate-400 w-full lg:text-base lg:max-w-xl lg:text-left">
             Se você está procurando um desenvolvedor motivado e com habilidades
             técnicas sólidas, por favor, sinta-se à vontade para entrar em
             contato comigo para discutirmos como posso contribuir para sua
             empresa. Obrigado pela atenção e estou ansioso para conversar com
             você em breve.
           </p>
-          <p className="text-base text-slate-400 lg:text-left">
+          <p className="text-sm text-slate-400 lg:text-base lg:text-left">
             Fale comigo por e-mail ou pelo LinkedIn.
           </p>
           <div className="flex justify-center gap-4 lg:justify-start">

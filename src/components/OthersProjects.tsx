@@ -1,12 +1,13 @@
-import { OthersProjectProps } from "@/types/Project";
+import { loadProjects } from "@/lib/load-projects";
 import Link from "next/link";
 import { useState } from "react";
+import { OthersProjectProps } from "@/types/Project";
 
-type ProjectsProps = {
+export default function OthersProjects({
+  projects,
+}: {
   projects: OthersProjectProps[];
-};
-
-export default function OthersProjects({ projects }: ProjectsProps) {
+}): JSX.Element {
   const [numProjects, setNumProjects] = useState<number>(6);
 
   const handleShowMore = () => {

@@ -1,7 +1,20 @@
+import { loadProjects } from "@/lib/load-projects";
+import { OthersProjectProps } from "@/types/Project";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Link from "next/link";
-import { IconFork, IconStar } from "./icons";
+import { useEffect, useState } from "react";
 
-export default function Footer({ projects }: any): JSX.Element {
+export default function Footer() {
+  const [projects, setProjects] = useState<OthersProjectProps[]>([]);
+  useEffect(() => {
+    async function load() {
+      const response = await loadProjects();
+      const data = response.filter((project) => project.id === 653839230);
+      setProjects(data);
+    }
+    load();
+  }, []);
+
   return (
     <footer className="py-6 bg-gray-800/50">
       <div className="flex justify-center">
@@ -17,9 +30,7 @@ export default function Footer({ projects }: any): JSX.Element {
           </p>
           <div className="space-x-2 flex items-center">
             <i className="bx bxs-star"></i>
-            <span>{projects[0].stargazers_count}</span>
-            <i className="bx bx-git-repo-forked"></i>
-            <span>{projects[0].forks_count}</span>
+            <span>{projects[0]?.stargazers_count}</span>
           </div>
         </Link>
       </div>
