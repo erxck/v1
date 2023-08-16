@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { OthersProjectProps } from "@/types/Project";
 
@@ -59,22 +59,34 @@ export default function Projects({
                   <Link
                     className="flex items-center text-emerald-400 border border-emerald-400 py-3 px-4 text-base lg:text-lg font-bold rounded hover:bg-emerald-400/10 ease-in duration-300"
                     href={project.homepage}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={project.homepage.charAt(0) === "/" ? "" : "_blank"}
+                    rel={
+                      project.homepage.charAt(0) === "/"
+                        ? ""
+                        : "noopener noreferrer"
+                    }
                     passHref
+                    title="Veja o projeto"
                   >
                     <i className="bx bx-link-external"></i>
                   </Link>
                 )}
-                <Link
-                  className="flex items-center text-emerald-400 border border-emerald-400 py-3 px-4 text-base lg:text-xl font-bold rounded hover:bg-emerald-400/10 ease-in duration-300"
-                  href={project.html_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  passHref
-                >
-                  <i className="bx bxl-github"></i>
-                </Link>
+                {project.html_url !== "" && (
+                  <Link
+                    className="flex items-center text-emerald-400 border border-emerald-400 py-3 px-4 text-base lg:text-xl font-bold rounded hover:bg-emerald-400/10 ease-in duration-300"
+                    href={project.html_url}
+                    target={project.html_url.charAt(0) === "/" ? "" : "_blank"}
+                    rel={
+                      project.html_url.charAt(0) === "/"
+                        ? ""
+                        : "noopener noreferrer"
+                    }
+                    passHref
+                    title="GitHub"
+                  >
+                    <i className="bx bxl-github"></i>
+                  </Link>
+                )}
               </div>
             </div>
           </div>

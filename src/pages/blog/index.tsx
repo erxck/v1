@@ -1,38 +1,92 @@
 import Layout from "@/components/Layout";
 import Image from "next/image";
 import IconBlog from "@/assets/img/icon-blog.png";
+import Link from "next/link";
+import Head from "next/head";
+
+type Post = {
+  title: string;
+  description: string;
+  date: string;
+};
 
 export default function Blog() {
+  const posts: Post[] = [
+    {
+      title: "Pesquisa Binária e Pesquisa Linear",
+      description:
+        "Explorando as diferenças entre pesquisa binária e pesquisa linear: uma análise comparativa dos algoritmos de busca mais populares.",
+      date: "10 de Agosto de 2023",
+    },
+    {
+      title: "O que é um algoritmo?",
+      description: "Em breve...",
+      date: "...",
+    },
+  ];
+
   return (
-    <Layout>
-      <div className="px-6 py-20 w-full max-w-[1440px] flex-1 mx-auto sm:px-16 lg:px-24 xl:px-36">
-        <div className="flex flex-col justify-center items-center">
-          <Image src={IconBlog} alt="blog" width={100} height={100} />
-        </div>
-        <div className="border-l-4 border-emerald-400/30 pl-3 mt-10">
-          <h2 className="mb-1 text-base text-emerald-400 font-bold md:text-lg lg:text-xl">
-            Blog
-          </h2>
-          <h1 className="text-4xl text-gray-200 font-bold lg:text-5xl">
-            Artigos
-          </h1>
-        </div>
-        <section className="mt-10 gap-4 grid grid-cols-1 md:grid-cols-2">
-          <div className="p-6 bg-gray-700/40 backdrop-blur-md ring-1 ring-gray-700/80 rounded-lg">
-            <h1 className="mb-4 text-2xl xl:text-3xl text-gray-200 font-bold">
-              Pesquisa Binária e Pesquisa Linear
-            </h1>
-            <p className="text-sm lg:text-base text-slate-400 w-full">
-              Em breve...
-            </p>
-            <div className="mt-6 flex items-center justify-end">
-              <button className="flex items-center text-emerald-400 border border-emerald-400 py-3 px-4 text-base lg:text-lg font-bold rounded hover:bg-emerald-400/10 ease-in duration-300">
-                <i className="bx bx-link-external"></i>
-              </button>
-            </div>
+    <>
+      <Head>
+        <title>Erick Rian | Blog</title>
+        <meta
+          name="description"
+          content="Artigos sobre tecnologia, programação, desenvolvimento web e muito mais."
+        />
+        <meta property="og:title" content="Blog" />
+        <meta
+          property="og:description"
+          content="Artigos sobre tecnologia, programação, desenvolvimento web e muito mais."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://erickrian.com/blog" />
+        <meta property="og:image" content="/preview.png" />
+        <meta property="og:image:alt" content="Blog" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:site_name" content="Blog" />
+      </Head>
+      <Layout>
+        <div>
+          <div className="flex justify-center items-center">
+            <Image src={IconBlog} alt="blog" width={100} height={100} />
           </div>
+          <div className="border-l-4 border-emerald-400/30 pl-3 mt-10">
+            <h2 className="mb-1 text-base text-emerald-400 font-bold md:text-lg lg:text-xl">
+              Blog
+            </h2>
+            <h1 className="text-4xl text-gray-200 font-bold lg:text-5xl">
+              Artigos
+            </h1>
+          </div>
+        </div>
+        <section className="mt-10">
+          <ul className="flex flex-col gap-4">
+            {posts.map((post, index) => (
+              <li
+                key={index}
+                className="flex flex-col bg-gray-700/40 backdrop-blur-md ring-1 ring-gray-700/80 p-4 rounded-lg"
+              >
+                <Link
+                  className="text-xl lg:text-2xl font-bold text-emerald-400 hover:text-emerald-400/60 hover:underline hover:underline-offset-4"
+                  href={`/blog/${post.title
+                    .normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "")
+                    .replace(/\s+/g, "-")
+                    .toLowerCase()}`}
+                >
+                  {post.title}
+                </Link>
+                <h2 className="text-xs text-slate-400 font-bold mt-1 md:text-sm">
+                  {post.date}
+                </h2>
+                <p className="text-sm md:text-base text-slate-300 mt-3 w-full">
+                  {post.description}
+                </p>
+              </li>
+            ))}
+          </ul>
         </section>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   );
 }

@@ -45,7 +45,9 @@ export default function Layout({
         <link rel="apple-touch-icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="flex-1">{children}</main>
+      <main className="px-4 py-20 w-full max-w-[1440px] flex-1 mx-auto sm:px-16 lg:px-24 xl:px-36">
+        {children}
+      </main>
       <Footer />
       {/* <div className="hidden cursor absolute w-16 h-16 bg-emerald-400 rounded-full z-50 pointer-events-none mix-blend-difference lg:block"></div> */}
     </div>

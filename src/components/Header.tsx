@@ -42,7 +42,8 @@ export default function Header(): JSX.Element {
     >
       <nav className="py-3 lg:flex lg:justify-between lg:items-center">
         <div className="flex items-center justify-between px-10">
-          {router.pathname === "/blog" ? (
+          {router.pathname === "/blog" ||
+          router.pathname === "/blog/[article]" ? (
             <Link href={"/"}>
               <Image
                 className="w-24 hover:scale-105 duration-300 cursor-pointer"
@@ -91,7 +92,8 @@ export default function Header(): JSX.Element {
             transition-all ease-in duration-300 opacity-0 px-7 py-0 left-0 absolute w-full
             ${menu ? "top-[71px] opacity-100" : ""}`}
         >
-          {router.pathname === "/blog" ? (
+          {router.pathname === "/blog" ||
+          router.pathname === "/blog/[article]" ? (
             <li
               className="hover:scale-105 hover:bg-gray-600/50 lg:hover:bg-inherit duration-300 ease-linear w-full"
               onClick={() => setMenu(!menu)}

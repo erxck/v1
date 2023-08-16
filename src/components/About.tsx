@@ -44,20 +44,19 @@ export default function About(): JSX.Element {
         </div>
         <div className="flex flex-col text-sm gap-2 text-slate-400 w-full md:max-w-md lg:text-base lg:max-w-lg xl:max-w-xl">
           <p>
-            Eu sou um estudante de Ciência da Computação com fortes habilidades
-            de programação, resolução de problemas e desenvolvimento de
-            software.
+            Eu sou um estudante de Ciência da Computação, com sólidas
+            habilidades em programação, resolução de problemas e desenvolvimento
+            de software.
           </p>
           <p>
-            Estou procurando oportunidades para aplicar meus conhecimentos
-            teóricos e desenvolver habilidades práticas. Possuo conhecimento em
-            linguagens como C/C++, JavaScript e TypeScript. Sou ágil, entusiasta
-            e possuo habilidades de comunicação eficazes.
+            Busco aplicar meus conhecimentos teóricos, desenvolver habilidades
+            práticas e contribuir para projetos inovadores. Possuo conhecimento
+            em linguagens como C, C++, JavaScript e TypeScript.
           </p>
           <p>
-            Estou procurando oportunidades para ganhar experiência prática e
-            crescer como engenheiro de software, apesar de não ter experiência
-            de trabalho anterior.
+            Sou ágil, entusiasta e comunicativo, buscando experiências para
+            crescimento como engenheiro de software, apesar de não ter
+            experiência de trabalho anterior.
           </p>
         </div>
         <div className="flex mx-auto gap-4 py-1 px-3 mt-7 items-center bg-gray-700/40 backdrop-blur-md ring-1 ring-gray-700/80 rounded-lg w-fit md:mx-0">

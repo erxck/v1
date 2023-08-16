@@ -55,8 +55,8 @@ export default function index({
       id: 2,
       projectImage: PreviewSearchBinary,
       name: "Artigo: Pesquisa Binária e Pesquisa Linear",
-      homepage: "",
-      html_url: "https://github.com/erxck/pesquisa-binaria",
+      homepage: "/blog/pesquisa-binaria-e-pesquisa-linear",
+      html_url: "",
       description:
         "Explorando as diferenças entre pesquisa binária e pesquisa linear: uma análise comparativa dos algoritmos de busca mais populares.",
       tecnologias: [
@@ -109,20 +109,20 @@ export default function index({
 
   return (
     <Layout>
+      {/* Home */}
       <Home />
-      <div className="px-6 py-16 w-full max-w-[1440px] mx-auto sm:px-16 lg:px-24 xl:px-36">
-        {/* About */}
-        <About />
 
-        {/* Projects */}
-        <Projects featuredProjects={featuredProjects} />
+      {/* About */}
+      <About />
 
-        {/* Others Projects */}
-        <OthersProjects projects={projects} />
+      {/* Projects */}
+      <Projects featuredProjects={featuredProjects} />
 
-        {/* Contact */}
-        <Contact />
-      </div>
+      {/* Others Projects */}
+      <OthersProjects projects={projects} />
+
+      {/* Contact */}
+      <Contact />
     </Layout>
   );
 }
