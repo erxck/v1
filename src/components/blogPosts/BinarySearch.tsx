@@ -24,11 +24,11 @@ export default function BinarySearch(): JSX.Element {
       title: "Logaritmos",
     },
     {
-      id: "binary-search",
+      id: "how-binary-search-works",
       title: "Pesquisa Binária",
     },
     {
-      id: "linear-search",
+      id: "how-linear-search-works",
       title: "Pesquisa Linear",
     },
     {
@@ -74,8 +74,8 @@ export default function BinarySearch(): JSX.Element {
           </p>
         </Introducion>
         <Logarithms id="logarithms" />
-        <WorkingBinarySearch id="binary-search" />
-        <WorkingLinearSearch id="linear-search" />
+        <WorkingBinarySearch id="how-binary-search-works" />
+        <WorkingLinearSearch id="how-linear-search-works" />
         <Runtime id="runtime" />
         <Examples id="examples" />
         <Implementation id="implementation" />
