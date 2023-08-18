@@ -43,7 +43,7 @@ export default function Blog() {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://erickrian.com/blog" />
-        <meta property="og:image" content="/preview.png" />
+        <meta property="og:image" content="/blog-preview.png" />
         <meta property="og:image:alt" content="Blog" />
         <meta property="og:locale" content="pt_BR" />
         <meta property="og:site_name" content="Blog" />

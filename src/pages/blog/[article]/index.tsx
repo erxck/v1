@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 
 import BinarySearch from "@/components/blogPosts/BinarySearch";
 import WhatsAnAlgorithm from "@/components/blogPosts/WhatsAnAlgorithm";
+import Head from "next/head";
 
 export default function Page() {
   const router = useRouter();
@@ -19,26 +20,53 @@ export default function Page() {
     return articles.includes(article);
   };
 
+  const titles: { [key: string]: string } = {
+    "binary-search": "Pesquisa Binária e Pesquisa Linear",
+    "whats-an-algorithm": "O que é um algoritmo?",
+  };
+
   return (
-    <Layout>
-      <div className="flex justify-start items-center mb-10">
-        <Link
-          className="flex items-center justify-center py-2 px-4 rounded-lg border border-emerald-400 hover:bg-emerald-400/10 transition duration-300 ease-in-out md:py-3 md:px-5"
-          href="/blog"
-        >
-          <i className="bx bx-left-arrow-alt text-emerald-400 text-xl"></i>
-        </Link>
-      </div>
-      {isValidArticle(article as string) ? (
-        articles[article as string]
-      ) : (
-        <div className="flex flex-col gap-1 mt-10">
-          <h1 className="text-xl text-gray-200 font-bold lg:text-3xl">404</h1>
-          <p className="text-sm text-slate-400 md:text-base">
-            Artigo não encontrado
-          </p>
+    <>
+      <Head>
+        <title>Erick Rian | Blog - {titles[article as string]}</title>
+        <meta
+          name="description"
+          content="Artigos sobre tecnologia, programação, desenvolvimento web e muito mais."
+        />
+        <meta property="og:title" content={titles[article as string]} />
+        <meta
+          property="og:description"
+          content="Artigos sobre tecnologia, programação, desenvolvimento web e muito mais."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={`https://erickrian.com/blog/${article}`}
+        />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:image:alt" content={titles[article as string]} />
+        <meta property="og:site_name" content={titles[article as string]} />
+      </Head>
+      <Layout>
+        <div className="flex justify-start items-center mb-10">
+          <Link
+            className="flex items-center justify-center py-2 px-4 rounded-lg border border-emerald-400 hover:bg-emerald-400/10 transition duration-300 ease-in-out md:py-3 md:px-5"
+            href="/blog"
+          >
+            <i className="bx bx-left-arrow-alt text-emerald-400 text-xl"></i>
+          </Link>
         </div>
-      )}
-    </Layout>
+        {isValidArticle(article as string) ? (
+          articles[article as string]
+        ) : (
+          <div className="flex flex-col gap-1 mt-10">
+            <h1 className="text-xl text-gray-200 font-bold lg:text-3xl">404</h1>
+            <p className="text-sm text-slate-400 md:text-base">
+              Artigo não encontrado
+            </p>
+          </div>
+        )}
+      </Layout>
+    </>
   );
 }

@@ -19,6 +19,7 @@ import { OthersProjectProps } from "@/types/Project";
 import PreviewSearchBinary from "@/assets/img/search_binary.png";
 import PreviewGoogleKeepClone from "@/assets/img/google-keep-clone.png";
 import PreviewSortingAlgorithms from "@/assets/img/SortingAlgorithms.png";
+import Head from "next/head";
 
 export default function index({
   projects,
@@ -108,22 +109,45 @@ export default function index({
   ];
 
   return (
-    <Layout>
-      {/* Home */}
-      <Home />
+    <>
+      <Head>
+        <title>Erick Rian</title>
+        <meta name="description" content="Erick Rian" />
+        <link rel="icon" href="/favicon.ico" />
 
-      {/* About */}
-      <About />
+        <meta property="og:title" content="Erick Rian" />
+        <meta property="og:description" content="Portfólio de Erick Rian" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://erickrian.com/" />
+        <meta property="og:image" content="/preview.png" />
+        <meta property="og:image:alt" content="Erick Rian" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:site_name" content="Erick Rian" />
 
-      {/* Projects */}
-      <Projects featuredProjects={featuredProjects} />
+        <meta name="theme-color" content="#111827" />
+        <meta name="msapplication-TileColor" content="#111827" />
+        <meta name="msapplication-TileImage" content="/favicon.ico" />
+        <meta name="msapplication-config" content="/favicon.ico" />
 
-      {/* Others Projects */}
-      <OthersProjects projects={projects} />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
+      </Head>
+      <Layout>
+        {/* Home */}
+        <Home />
 
-      {/* Contact */}
-      <Contact />
-    </Layout>
+        {/* About */}
+        <About />
+
+        {/* Projects */}
+        <Projects featuredProjects={featuredProjects} />
+
+        {/* Others Projects */}
+        <OthersProjects projects={projects} />
+
+        {/* Contact */}
+        <Contact />
+      </Layout>
+    </>
   );
 }
 
