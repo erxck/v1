@@ -35,7 +35,7 @@ export default function Page() {
         <div className="flex flex-col gap-1 mt-10">
           <h1 className="text-xl text-gray-200 font-bold lg:text-3xl">404</h1>
           <p className="text-sm text-slate-400 md:text-base">
-            Argigo não encontrado
+            Artigo não encontrado
           </p>
         </div>
       )}
