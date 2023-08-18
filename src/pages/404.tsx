@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import Layout from "@/components/Layout";
 
 export default function Custom404() {
   return (
@@ -25,7 +24,7 @@ export default function Custom404() {
             href="/"
             className="text-base text-emerald-400 font-bold hover:text-emerald-400/60 hover:underline hover:underline-offset-4"
           >
-            Voltar para a página inicial
+            Ir para a página inicial
           </Link>
         </div>
       </div>

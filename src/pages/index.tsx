@@ -55,7 +55,7 @@ export default function index({
       id: 2,
       projectImage: PreviewSearchBinary,
       name: "Artigo: Pesquisa Binária e Pesquisa Linear",
-      homepage: "/blog/pesquisa-binaria-e-pesquisa-linear",
+      homepage: "/blog/binary-search",
       html_url: "",
       description:
         "Explorando as diferenças entre pesquisa binária e pesquisa linear: uma análise comparativa dos algoritmos de busca mais populares.",

@@ -8,6 +8,7 @@ type Post = {
   title: string;
   description: string;
   date: string;
+  url: string;
 };
 
 export default function Blog() {
@@ -17,11 +18,13 @@ export default function Blog() {
       description:
         "Explorando as diferenças entre pesquisa binária e pesquisa linear: uma análise comparativa dos algoritmos de busca mais populares.",
       date: "02 de Abril de 2023",
+      url: "binary-search",
     },
     {
       title: "O que é um algoritmo?",
       description: "Em breve...",
       date: "...",
+      url: "whats-an-algorithm",
     },
   ];
 
@@ -68,11 +71,7 @@ export default function Blog() {
               >
                 <Link
                   className="text-xl lg:text-2xl font-bold text-emerald-400 hover:text-emerald-400/60 hover:underline hover:underline-offset-4"
-                  href={`/blog/${post.title
-                    .normalize("NFD")
-                    .replace(/[\u0300-\u036f]/g, "")
-                    .replace(/\s+/g, "-")
-                    .toLowerCase()}`}
+                  href={`/blog/${post.url}`}
                 >
                   {post.title}
                 </Link>

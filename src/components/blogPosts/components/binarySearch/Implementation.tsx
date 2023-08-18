@@ -76,7 +76,7 @@ console.log(linearSearch(myList, 7)); // 6
           queira dar uma olhada:{" "}
           <Link
             className="text-emerald-400 hover:underline duration-300 ease-in-out"
-            href="https://github.com/erxck/pesquisa-binaria"
+            href="https://github.com/erxck/binary-search"
             target="_blank"
             rel="noopener noreferrer"
             passHref

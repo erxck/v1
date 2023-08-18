@@ -49,7 +49,7 @@ export default function BinarySearch(): JSX.Element {
     <div className="block xl:flex xl:gap-10 xl:flex-row xl:justify-between">
       <Navigation
         navigation={nav}
-        githubLink="https://github.com/erxck/pesquisa-binaria"
+        githubLink="https://github.com/erxck/binary-search"
       />
 
       <div className="flex flex-col">
