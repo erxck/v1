@@ -42,7 +42,10 @@ export default function Navigation({
   }
 
   return (
-    <nav className="w-56 shrink-0 order-last hidden xl:block">
+    <nav
+      className="w-56 shrink-0 order-last hidden xl:block"
+      data-aos="fade-up"
+    >
       <div className="sticky top-44">
         <h1 className="text-xl text-gray-200 font-bold">Nesta página</h1>
         <ul

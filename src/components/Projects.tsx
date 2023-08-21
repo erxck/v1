@@ -11,7 +11,7 @@ export default function Projects({
 }: ProjectProps): JSX.Element {
   return (
     <section className="mt-28 md:mt-48 scroll-m-28" id="projects">
-      <div className="border-l-4 border-emerald-400/30 pl-3">
+      <div className="border-l-4 border-emerald-400/30 pl-3" data-aos="fade-up">
         <h2 className="mb-1 text-base text-emerald-400 font-bold md:text-lg lg:text-xl">
           Meus
         </h2>
@@ -22,7 +22,10 @@ export default function Projects({
 
       {featuredProjects.map((project) => (
         <section className="mt-10 space-y-10" key={project.id}>
-          <div className="p-6 bg-gray-700/40 backdrop-blur-md ring-1 ring-gray-700/80 rounded-lg block md:flex md:justify-around md:items-center md:gap-10">
+          <div
+            className="p-6 bg-gray-700/40 backdrop-blur-md ring-1 ring-gray-700/80 rounded-lg block md:flex md:justify-around md:items-center md:gap-10"
+            data-aos={project.id % 2 === 0 ? "fade-up" : "fade-down"}
+          >
             <div
               className={`flex justify-center md:justify-start w-full
                 ${project.id === 2 && "order-2"}`}

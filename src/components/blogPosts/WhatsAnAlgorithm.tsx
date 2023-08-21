@@ -1,17 +1,16 @@
+import Title from "./components/Title";
+import Navigation from "./components/Navigation";
+import Introduction from "./components/Introduction";
+
 export default function WhatsAnAlgorithm() {
   return (
-    <section className="flex flex-col">
-      <div className="flex flex-col gap-1">
-        <h1 className="text-xl text-gray-200 font-bold lg:text-3xl">
-          O que é um algoritmo?
-        </h1>
-        <h2 className="text-xs text-slate-400 font-bold md:text-sm">...</h2>
+    <>
+      <div className="flex flex-col w-full">
+        <Title title="O que é um algoritmo?" date="Em breve..." />
+        <Introduction id="introduction">
+          <p>Em breve...</p>
+        </Introduction>
       </div>
-      <div className="mt-10">
-        <p className="text-sm md:text-base text-slate-300 w-full">
-          Em breve...
-        </p>
-      </div>
-    </section>
+    </>
   );
 }

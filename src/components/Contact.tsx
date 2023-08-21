@@ -8,8 +8,11 @@ export default function Contact() {
       className="mt-28 md:mt-48 lg:flex lg:justify-between lg:gap-10 lg:items-center scroll-m-24"
       id="contact"
     >
-      <section className="w-full flex flex-col gap-8">
-        <div className="border-l-4 border-emerald-400/30 pl-3">
+      <div className="w-full flex flex-col gap-8">
+        <div
+          className="border-l-4 border-emerald-400/30 pl-3"
+          data-aos="fade-down"
+        >
           <h2 className="mb-1 text-base text-emerald-400 font-bold md:text-lg lg:text-xl">
             Fale comigo
           </h2>
@@ -17,7 +20,7 @@ export default function Contact() {
             Contato
           </h1>
         </div>
-        <div className="flex w-full flex-col gap-5">
+        <div className="flex w-full flex-col gap-5" data-aos="fade-up">
           <p className="text-sm text-slate-400 w-full lg:text-base lg:max-w-xl lg:text-left">
             Se você está procurando um desenvolvedor motivado e com habilidades
             técnicas sólidas, por favor, sinta-se à vontade para entrar em
@@ -28,7 +31,10 @@ export default function Contact() {
           <p className="text-sm text-slate-400 lg:text-base lg:text-left">
             Fale comigo por e-mail ou pelo LinkedIn.
           </p>
-          <div className="flex justify-center gap-4 lg:justify-start">
+          <div
+            className="flex justify-center gap-4 lg:justify-start"
+            data-aos="fade-down"
+          >
             <Link
               className="block w-fit text-emerald-400 border border-emerald-400 py-3 px-7 text-sm font-bold uppercase rounded hover:bg-emerald-400/10 ease-in duration-300 lg:py-4 lg:px-10"
               href={
@@ -51,8 +57,8 @@ export default function Contact() {
             </Link>
           </div>
         </div>
-      </section>
-      <div className="hidden lg:block max-w-sm">
+      </div>
+      <div className="hidden lg:block max-w-sm" data-aos="fade-up">
         <Image
           className="w-full"
           src={ImageContact}

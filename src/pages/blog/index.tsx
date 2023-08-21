@@ -49,7 +49,7 @@ export default function Blog() {
         <meta property="og:site_name" content="Blog" />
       </Head>
       <Layout>
-        <div>
+        <div data-aos="fade-down">
           <div className="flex justify-center items-center">
             <Image src={IconBlog} alt="blog" width={100} height={100} />
           </div>
@@ -68,6 +68,7 @@ export default function Blog() {
               <li
                 key={index}
                 className="flex flex-col bg-gray-700/40 backdrop-blur-md ring-1 ring-gray-700/80 p-4 rounded-lg"
+                data-aos={index % 2 === 0 ? "fade-up" : "fade-down"}
               >
                 <Link
                   className="text-xl lg:text-2xl font-bold text-emerald-400 hover:text-emerald-400/60 hover:underline hover:underline-offset-4"

@@ -46,13 +46,13 @@ export default function BinarySearch(): JSX.Element {
   ];
 
   return (
-    <div className="block xl:flex xl:gap-10 xl:flex-row xl:justify-between">
+    <>
       <Navigation
         navigation={nav}
         githubLink="https://github.com/erxck/binary-search"
       />
 
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         <Title
           title="Pesquisa Binária e Pesquisa Linear"
           date="02 de Abril de 2023"
@@ -80,6 +80,6 @@ export default function BinarySearch(): JSX.Element {
         <Examples id="examples" />
         <Implementation id="implementation" />
       </div>
-    </div>
+    </>
   );
 }

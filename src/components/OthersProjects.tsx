@@ -16,7 +16,10 @@ export default function OthersProjects({
 
   return (
     <section className="mt-20 md:mt-34">
-      <div className="border-l-4 border-emerald-400/30 pl-3">
+      <div
+        className="border-l-4 border-emerald-400/30 pl-3"
+        data-aos="fade-down"
+      >
         <h1 className="text-2xl text-emerald-400 font-bold md:text-3xl lg:text-4xl">
           Outros
         </h1>
@@ -35,6 +38,7 @@ export default function OthersProjects({
                 <li
                   className="p-6 w-full h-60 bg-gray-700/40 backdrop-blur-md ring-1 ring-gray-700/80 rounded-lg flex flex-col justify-between gap-4"
                   key={project.id}
+                  data-aos={project.id % 2 === 0 ? "fade-up" : "fade-down"}
                 >
                   <div className="flex flex-col gap-2">
                     <h1 className="text-xl text-gray-200 font-bold">
