@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ButtonTop from "./ButtonTop";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -11,18 +12,6 @@ export default function Layout({
 }: {
   children: React.ReactNode;
 }): JSX.Element {
-  const handleCursor = (e: any) => {
-    const cursor = document.querySelector(".cursor");
-    cursor?.setAttribute(
-      "style",
-      `top: ${e.pageY - 30}px; left: ${e.pageX - 30}px;`
-    );
-  };
-
-  if (typeof window !== "undefined") {
-    window.addEventListener("mousemove", handleCursor);
-  }
-
   useEffect(() => {
     AOS.init({
       // Global settings:
@@ -44,6 +33,11 @@ export default function Layout({
       mirror: false, // whether elements should animate out while scrolling past them
       anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
     });
+
+    // Destroy
+    return () => {
+      AOS.refresh();
+    };
   }, []);
 
   return (
@@ -53,7 +47,7 @@ export default function Layout({
         {children}
       </main>
       <Footer />
-      {/* <div className="hidden cursor absolute w-16 h-16 bg-emerald-400 rounded-full z-50 pointer-events-none mix-blend-difference lg:block"></div> */}
+      <ButtonTop />
     </div>
   );
 }

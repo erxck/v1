@@ -1,8 +1,5 @@
-import Link from "next/link";
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
-
-import { IconGitHub, IconMail, IconLinkedin } from "./icons";
 
 export default function Home(): JSX.Element {
   // Create Ref element
@@ -11,7 +8,7 @@ export default function Home(): JSX.Element {
   // Create Typed instance
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["Erick Rian", "Software Engineer"], // Strings
+      strings: ["Erick Rian", "Software Developer"], // Strings
       typeSpeed: 100,
       backSpeed: 100,
       loop: true,

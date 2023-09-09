@@ -63,21 +63,23 @@ export default function Navigation({
               </Link>
             </li>
           ))}
-          <li className="pt-4 border-t border-gray-700">
-            <Link
-              className="group hover:text-emerald-400 duration-300 ease-in-out"
-              href={githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              passHref
-              title="Código completo no GitHub"
-            >
-              <span>Código no GitHub</span>
-              <span className="inline-block ml-2 text-slate-300 group-hover:text-emerald-400 duration-300 ease-in-out">
-                <i className="bx bx-link-external"></i>
-              </span>
-            </Link>
-          </li>
+          {githubLink !== "" && (
+            <li className="pt-4 border-t border-gray-700">
+              <Link
+                className="group hover:text-emerald-400 duration-300 ease-in-out"
+                href={githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                passHref
+                title="Código completo no GitHub"
+              >
+                <span>Código no GitHub</span>
+                <span className="inline-block ml-2 text-slate-300 group-hover:text-emerald-400 duration-300 ease-in-out">
+                  <i className="bx bx-link-external"></i>
+                </span>
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </nav>

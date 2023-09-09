@@ -7,11 +7,7 @@ import Examples from "./components/binarySearch/Examples";
 import Implementation from "./components/binarySearch/Implementation";
 import Navigation from "./components/Navigation";
 import Title from "./components/Title";
-
-type NavigationItem = {
-  id: string;
-  title: string;
-};
+import { NavigationItem } from "@/types/NavigationItem";
 
 export default function BinarySearch(): JSX.Element {
   const nav: NavigationItem[] = [

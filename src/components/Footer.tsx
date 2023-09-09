@@ -13,6 +13,10 @@ export default function Footer() {
       setProjects(data);
     }
     load();
+
+    return () => {
+      setProjects([]);
+    };
   }, []);
 
   return (

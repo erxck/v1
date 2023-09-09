@@ -61,8 +61,7 @@ export default function About(): JSX.Element {
           </p>
           <p>
             Sou ágil, entusiasta e comunicativo, buscando experiências para
-            crescimento como engenheiro de software, apesar de não ter
-            experiência de trabalho anterior.
+            crescimento como desenvolvedor de software.
           </p>
         </div>
         <div

@@ -132,7 +132,7 @@ export default function Header(): JSX.Element {
           )}
           <li className="py-5 flex justify-center lg:p-0">
             <Link
-              className="block py-3 px-5 text-white text-lg bg-emerald-500 rounded-lg hover:bg-emerald-600 duration-300 lg:text-sm"
+              className="block py-3 px-5 text-white text-lg bg-emerald-600 rounded-lg hover:bg-emerald-700 duration-300 lg:text-sm"
               href={"/resume.pdf"}
               target="_blank"
             >

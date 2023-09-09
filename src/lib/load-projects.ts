@@ -1,6 +1,5 @@
 import axios from "axios";
 import { OthersProjectProps } from "@/types/Project";
-import { GetStaticProps } from "next";
 
 export async function loadProjects(): Promise<OthersProjectProps[]> {
   const username = "erxck";

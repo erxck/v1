@@ -31,7 +31,7 @@ export default function Blog() {
   return (
     <>
       <Head>
-        <title>Erick Rian | Blog</title>
+        <title>Blog | Erick Rian</title>
         <meta
           name="description"
           content="Artigos sobre tecnologia, programação, desenvolvimento web e muito mais."

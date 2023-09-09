@@ -82,7 +82,7 @@ console.log(linearSearch(myList, 7)); // 6
             passHref
             title="Código completo no GitHub"
           >
-            Click aqui
+            Código completo no GitHub
           </Link>
         </p>
       </section>

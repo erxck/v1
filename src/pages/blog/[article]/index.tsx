@@ -28,7 +28,7 @@ export default function Page() {
   return (
     <>
       <Head>
-        <title>Erick Rian | Blog - {titles[article as string]}</title>
+        <title>{titles[article as string]} | Blog | Erick Rian</title>
         <meta
           name="description"
           content="Artigos sobre tecnologia, programação, desenvolvimento web e muito mais."
@@ -55,7 +55,9 @@ export default function Page() {
           <Link
             className="flex items-center justify-center py-2 px-4 rounded-lg border border-emerald-400 hover:bg-emerald-400/10 transition duration-300 ease-in-out md:py-3 md:px-5"
             href="/blog"
+            title="Voltar"
           >
+            <span className="sr-only">Voltar</span>
             <i className="bx bx-left-arrow-alt text-emerald-400 text-xl"></i>
           </Link>
         </div>

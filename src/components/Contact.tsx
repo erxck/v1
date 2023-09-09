@@ -65,6 +65,7 @@ export default function Contact() {
           width={500}
           height={500}
           alt="Contact"
+          priority={false}
         />
       </div>
     </section>

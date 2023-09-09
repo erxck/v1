@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 
 import Layout from "@/components/Layout";
@@ -16,10 +17,9 @@ import {
 import { loadProjects } from "@/lib/load-projects";
 import { OthersProjectProps } from "@/types/Project";
 
-import PreviewSearchBinary from "@/assets/img/search_binary.png";
+import PreviewBinarySearch from "@/assets/img/preview_binary_search.png";
 import PreviewGoogleKeepClone from "@/assets/img/google-keep-clone.png";
 import PreviewSortingAlgorithms from "@/assets/img/SortingAlgorithms.png";
-import Head from "next/head";
 
 export default function index({
   projects,
@@ -54,7 +54,7 @@ export default function index({
     },
     {
       id: 2,
-      projectImage: PreviewSearchBinary,
+      projectImage: PreviewBinarySearch,
       name: "Artigo: Pesquisa Binária e Pesquisa Linear",
       homepage: "/blog/binary-search",
       html_url: "",
