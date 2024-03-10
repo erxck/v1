@@ -1,33 +1,12 @@
-import Layout from "@/components/Layout";
 import Image from "next/image";
 import IconBlog from "@/assets/img/icon-blog.png";
 import Link from "next/link";
 import Head from "next/head";
-
-type Post = {
-  title: string;
-  description: string;
-  date: string;
-  url: string;
-};
+import Layout from "@/components/Layout";
+import posts from "@/data/Posts";
+// import contents from "@/data/Contents";
 
 export default function Blog() {
-  const posts: Post[] = [
-    {
-      title: "Pesquisa Binária e Pesquisa Linear",
-      description:
-        "Explorando as diferenças entre pesquisa binária e pesquisa linear: uma análise comparativa dos algoritmos de busca mais populares.",
-      date: "02 de Abril de 2023",
-      url: "binary-search",
-    },
-    {
-      title: "O que é um algoritmo?",
-      description: "Em breve...",
-      date: "...",
-      url: "whats-an-algorithm",
-    },
-  ];
-
   return (
     <>
       <Head>
@@ -63,7 +42,7 @@ export default function Blog() {
           </div>
         </div>
         <section className="mt-10">
-          <ul className="flex flex-col gap-4">
+          <ul className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             {posts.map((post, index) => (
               <li
                 key={index}
@@ -71,7 +50,7 @@ export default function Blog() {
                 data-aos={index % 2 === 0 ? "fade-up" : "fade-down"}
               >
                 <Link
-                  className="text-xl lg:text-2xl font-bold text-emerald-400 hover:text-emerald-400/60 hover:underline hover:underline-offset-4"
+                  className="text-xl font-bold text-emerald-400 hover:text-emerald-400/60 hover:underline hover:underline-offset-4"
                   href={`/blog/${post.url}`}
                 >
                   {post.title}
@@ -79,7 +58,7 @@ export default function Blog() {
                 <h2 className="text-xs text-slate-400 font-bold mt-1 md:text-sm">
                   {post.date}
                 </h2>
-                <p className="text-sm md:text-base text-slate-300 mt-3 w-full">
+                <p className="text-xs md:text-base text-slate-300 mt-3 w-full">
                   {post.description}
                 </p>
               </li>

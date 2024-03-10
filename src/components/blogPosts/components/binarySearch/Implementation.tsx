@@ -16,16 +16,16 @@ export default function Implementation({ id }: { id: string }): JSX.Element {
               Pesquisa Binária:
             </h1>
             <pre className="text-xs text-slate-300 bg-gray-700/20 rounded-lg p-1 border border-gray-700 sm:p-4 md:text-base">
-              <code>
-                {`function binarySearch(list, item) {
-  let low = 0;
-  let high = list.length - 1;
+              <code lang="cpp">
+                {`int binarySearch(std::vector<int> list, int item) {
+  int low = 0;
+  int high = list.size() - 1;
 
   while (low <= high) {
-    let mid = Math.floor((low + high) / 2);
-    let guess = list[mid];
+    int mid = (low + high) / 2;
+    int guess = list[mid];
 
-    if (guess === item) {
+    if (guess == item) {
       return mid;
     }
 
@@ -36,12 +36,8 @@ export default function Implementation({ id }: { id: string }): JSX.Element {
     }
   }
 
-  return "Item não encontrado";
+  return -1;
 }
-
-const myList = [1, 2, 3, 4, 5, 6, 7, 8];
-
-console.log(binarySearch(myList, 7)); // 6
 `}
               </code>
             </pre>
@@ -51,21 +47,16 @@ console.log(binarySearch(myList, 7)); // 6
               Pesquisa Linear:
             </h1>
             <pre className="text-xs text-slate-300 bg-gray-700/20 rounded-lg p-1 border border-gray-700 sm:p-4 md:text-base">
-              <code>
-                {`function linearSearch(list, item) {
-  for (let i = 0; i < list.length; i++) {
-    if (list[i] === item) {
+              <code lang="cpp">
+                {`int linearSearch(std::vector<int> list, int item) {
+  for (int i = 0; i < list.size(); i++) {
+    if (list[i] == item) {
       return i;
     }
   }
 
-  return "Item não encontrado";
+  return -1;
 }
-
-const myList = [1, 2, 3, 4, 5, 6, 7, 8];
-
-console.log(linearSearch(myList, 7)); // 6
-
 `}
               </code>
             </pre>

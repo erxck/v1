@@ -43,7 +43,7 @@ export default function Navigation({
 
   return (
     <nav
-      className="w-56 shrink-0 order-last hidden xl:block"
+      className="class_blog_navigation w-56 shrink-0 order-last"
       data-aos="fade-up"
     >
       <div className="sticky top-44">

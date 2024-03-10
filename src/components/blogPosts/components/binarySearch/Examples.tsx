@@ -17,8 +17,10 @@ export default function Examples({ id }: { id: string }): JSX.Element {
         encontrar o número desejado.
       </p>
       <p>
-        Uma lista de 8 elementos ordenados, só precisará de no máximo 3 etapas
-        para encontrar o número desejado.
+        Uma lista de <strong className="text-emerald-400">8</strong> elementos
+        ordenados, só precisará de no máximo{" "}
+        <strong className="text-emerald-400">3</strong> etapas para encontrar o
+        número desejado.
       </p>
       <div>
         <p>
@@ -29,19 +31,18 @@ export default function Examples({ id }: { id: string }): JSX.Element {
           Número desejado: <strong className="text-emerald-400">7</strong>
         </p>
       </div>
-      <ol className="border-l-4 border-emerald-400/30 pl-3 my-2 flex flex-col gap-2">
+      <ol className="border-l-4 border-emerald-400/30 pl-3 my-2 flex flex-col gap-4">
         <li>
-          <strong className="text-emerald-400">1.</strong> Dividir a lista em
-          duas partes:{" "}
+          <strong>Etapa 1:</strong> Dividir a lista em duas partes:{" "}
           <strong className="text-emerald-400">[1, 2, 3, 4]</strong> e{" "}
           <strong className="text-emerald-400">[5, 6, 7, 8]</strong>
         </li>
         <li>
-          <strong className="text-emerald-400">2.</strong> Pega o número do meio
-          da lista: <strong className="text-emerald-400">5</strong>
+          <strong>Etapa 2:</strong> Pega o número do meio da lista:{" "}
+          <strong className="text-emerald-400">5</strong>
         </li>
         <li>
-          <strong className="text-emerald-400">3.</strong> Verifica se{" "}
+          <strong>Etapa 3:</strong> Verifica se{" "}
           <strong className="text-emerald-400">7</strong> é igual ao meio da
           lista <strong className="text-emerald-400">(5)</strong>, se não for,
           verifica se o <strong className="text-emerald-400">7</strong> é maior
@@ -53,18 +54,18 @@ export default function Examples({ id }: { id: string }): JSX.Element {
           <strong className="text-emerald-400">[5, 6, 7, 8]</strong>.
         </li>
         <li>
-          <strong className="text-emerald-400">4.</strong> Lista atual:{" "}
+          <strong>Etapa 4:</strong> Lista atual:{" "}
           <strong className="text-emerald-400">[6, 7, 8]</strong>, sem o número{" "}
           <strong className="text-emerald-400">5</strong>, pois ele já foi
           verificado e não é igual ao{" "}
           <strong className="text-emerald-400">7</strong>.
         </li>
         <li>
-          <strong className="text-emerald-400">5.</strong> Pega o número do meio
-          da lista: <strong className="text-emerald-400">7</strong>
+          <strong>Etapa 5:</strong> Pega o número do meio da lista:{" "}
+          <strong className="text-emerald-400">7</strong>
         </li>
         <li>
-          <strong className="text-emerald-400">6.</strong> Verifica se{" "}
+          <strong>Etapa 6:</strong> Verifica se{" "}
           <strong className="text-emerald-400">7</strong> é igual ao meio da
           lista <strong className="text-emerald-400">(7)</strong>, se for,
           retorna o índice do número desejado.

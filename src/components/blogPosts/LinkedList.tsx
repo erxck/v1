@@ -15,7 +15,7 @@ export default function WhatsAnAlgorithm() {
     <>
       <Navigation navigation={nav} githubLink="" />
       <div className="flex flex-col w-full">
-        <Title title="O que é um algoritmo?" date="Em breve..." />
+        <Title title="Como funcionam as listas encadeadas?" date="..." />
         <Introduction id="introduction">
           <p>Em breve...</p>
         </Introduction>

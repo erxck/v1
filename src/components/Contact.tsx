@@ -58,7 +58,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <div className="hidden lg:block max-w-sm" data-aos="fade-up">
+      <div className="class_image_contact max-w-sm" data-aos="fade-up">
         <Image
           className="w-full"
           src={ImageContact}

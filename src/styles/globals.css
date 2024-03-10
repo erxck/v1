@@ -66,10 +66,22 @@ section .typed-name .typed-cursor {
   filter: blur(45px);
 }
 
+.class_image_contact {
+  display: none;
+}
+
+.class_blog_navigation {
+  display: none;
+}
+
 @media screen and (min-width: 1024px) {
   section .typed-name .typed-cursor {
     bottom: 8px;
     font-size: 60px;
+  }
+
+  .class_image_contact {
+    display: block;
   }
 }
 
@@ -77,5 +89,9 @@ section .typed-name .typed-cursor {
   section .typed-name .typed-cursor {
     bottom: 8px;
     font-size: 72px;
+  }
+
+  .class_blog_navigation {
+    display: block;
   }
 }

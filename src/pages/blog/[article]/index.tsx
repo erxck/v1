@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import BinarySearch from "@/components/blogPosts/BinarySearch";
-import WhatsAnAlgorithm from "@/components/blogPosts/WhatsAnAlgorithm";
+import LinkedList from "@/components/blogPosts/LinkedList";
 import Head from "next/head";
 
 export default function Page() {
@@ -12,17 +12,17 @@ export default function Page() {
 
   const articles: { [key: string]: JSX.Element } = {
     "binary-search": <BinarySearch />,
-    "whats-an-algorithm": <WhatsAnAlgorithm />,
+    "linked-list": <LinkedList />,
   };
 
   const isValidArticle = (article: string): boolean => {
-    const articles = ["binary-search", "whats-an-algorithm"];
+    const articles = ["binary-search", "linked-list"];
     return articles.includes(article);
   };
 
   const titles: { [key: string]: string } = {
     "binary-search": "Pesquisa Binária e Pesquisa Linear",
-    "whats-an-algorithm": "O que é um algoritmo?",
+    "linked-list": "Listas Encadeadas",
   };
 
   return (
